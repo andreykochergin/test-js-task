@@ -21,9 +21,10 @@ function init() {
     // 3. Шаг 1 (см.сценарий);
     // 4. Шаг 2 (см.сценарий);
     // 5. Шаг 3 (см.сценарий);
-    loadImage();
-    loadQuestion();
-    step(); // перейти к шагу 1
+    loadImage(function(){
+        loadQuestion();
+        step();
+    });
 }
 
 // -----------------------------------------
@@ -31,11 +32,12 @@ function init() {
 // и добавление данных выражения и ответа.
 
 // Загружает изображение оси в canvas
-function loadImage() {
+function loadImage(cb) {
     var image = new Image();
     image.src = "img/sprite.png";
     image.onload = function() {
         context.drawImage(image, 0, 150, 800, 83);
+        cb();
     }
 }
 
@@ -58,7 +60,7 @@ function step() {
 
     // Необходимо для настройки z-index
     // чтобы линии были поверх изображения.
-    context.globalCompositeOperation = 'destination-over';
+    // context.globalCompositeOperation = 'destination-over';
 
     switch (currentStep) {
         case 1:
