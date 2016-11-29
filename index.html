@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ось</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      #app {
+        width: 800px;
+        text-align: center;
+      }
+      #question {
+        margin-bottom: 3em;
+        font-size: 250%;
+      }
+      #content {
+        position: relative;
+        width: 800px;
+        height: 200px;
+      }
+      input {
+        padding: 0.2em;
+        width: 2em;
+      }
+      .inputA, .inputB {
+        display: none;
+      }
+      .answerA, .answerB {
+        display: none;
+      }
+      .answerInput {
+        font-size: 90%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="question">
+        <span class="expressionA"></span>
+        +
+        <span class="expressionB"></span>
+        =
+        <span class="answer"></span>
+      </div>
+      <div id="content">
+        <canvas id="axis" width="800" height="250"></canvas>
+        <span class="answerA"></span>
+        <span class="answerB"></span>
+        <input class="inputA" type="number"/>
+        <input class="inputB" type="number"/>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
